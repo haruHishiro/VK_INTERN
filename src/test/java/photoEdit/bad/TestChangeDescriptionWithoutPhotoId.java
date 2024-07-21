@@ -1,6 +1,5 @@
 package photoEdit.bad;
 
-import base.GenerationData;
 import base.HttpHelper;
 import org.junit.jupiter.api.Test;
 import requestMethod.EditPhotoRequest;

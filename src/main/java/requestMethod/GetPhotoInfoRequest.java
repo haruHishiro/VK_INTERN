@@ -10,7 +10,7 @@ public class GetPhotoInfoRequest {
     private String photo_id = "";
     private String gid = "";
     private String fields = "";
-    private static final String METHOD_NAME ="photos.getPhotoInfo";
+    private static final String METHOD_NAME = "photos.getPhotoInfo";
 
     public static GetPhotoInfoRequest.Builder newBuilder() {
         return new GetPhotoInfoRequest().new Builder();
