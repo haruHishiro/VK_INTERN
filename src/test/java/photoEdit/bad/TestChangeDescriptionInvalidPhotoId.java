@@ -1,5 +1,6 @@
 package photoEdit.bad;
 
+import base.GenerationData;
 import base.HttpHelper;
 import org.junit.jupiter.api.Test;
 import requestMethod.EditPhotoRequest;
@@ -9,14 +10,14 @@ import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Тест проверяет изменение описания у пользовательского фото которое он не постил
+ * Тест проверяет ошибку передачи невалидного параметра photoId
  */
-public class TestChangeDescriptionNotOwner {
-    private static final String PHOTO_ID = "850649290020";
-    private static final String ERROR = "REQUEST : Invalid request : error.edit.photo.notOwner";
+public class TestChangeDescriptionInvalidPhotoId {
+    private static final String PHOTO_ID = GenerationData.getRandomString(5);
+    private static final String ERROR = "PARAM_USER_ID : Invalid uid [" + PHOTO_ID + "]";
 
     @Test
-    void changeDescriptionNotOwner() throws IOException, InterruptedException {
+    void changeDescriptionInvalidPhotoId() throws IOException, InterruptedException {
         EditPhotoRequest editPhotoRequest = EditPhotoRequest.newBuilder()
                 .setPhotoId(PHOTO_ID)
                 .build();

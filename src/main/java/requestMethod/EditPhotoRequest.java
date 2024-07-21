@@ -23,6 +23,14 @@ public class EditPhotoRequest {
                 '&' + "method" + '=' + METHOD_NAME;
     }
 
+    public String createUrlWithInvalidSessionKeyParam(String sessionKey) {
+        return ConfigRequest.createBaseURL(sessionKey) +
+                '&' + "photo_id" + '=' + photo_id +
+                '&' + "gid" + '=' + gid +
+                '&' + "description" + '=' + description +
+                '&' + "method" + '=' + METHOD_NAME;
+    }
+
     public class Builder {
 
         private Builder() {

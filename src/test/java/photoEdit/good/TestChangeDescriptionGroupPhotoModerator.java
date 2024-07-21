@@ -20,7 +20,7 @@ public class TestChangeDescriptionGroupPhotoModerator {
     private static final String DESCRIPTION = GenerationData.getRandomString(5);
 
     @Test
-    void changeDescriptionGroupPhoto() throws IOException, InterruptedException {
+    void changeDescriptionGroupPhotoModerator() throws IOException, InterruptedException {
         EditPhotoRequest editPhotoRequest = EditPhotoRequest.newBuilder()
                 .setPhotoId(PHOTO_ID)
                 .setGid(GROUP_ID)

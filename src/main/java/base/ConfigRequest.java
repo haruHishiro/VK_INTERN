@@ -25,4 +25,12 @@ public enum ConfigRequest {
                 '&' + SIG.name().toLowerCase(Locale.ROOT) + '=' + SIG.value +
                 '&' + FORMAT.name().toLowerCase(Locale.ROOT) + '=' + FORMAT.value;
     }
+
+    public static String createBaseURL(String sessionKey) {
+        return API_URL.value +
+                APPLICATION_KEY.name().toLowerCase(Locale.ROOT) + '=' + APPLICATION_KEY.value +
+                '&' + SESSION_KEY.name().toLowerCase(Locale.ROOT) + '=' + sessionKey +
+                '&' + SIG.name().toLowerCase(Locale.ROOT) + '=' + SIG.value +
+                '&' + FORMAT.name().toLowerCase(Locale.ROOT) + '=' + FORMAT.value;
+    }
 }

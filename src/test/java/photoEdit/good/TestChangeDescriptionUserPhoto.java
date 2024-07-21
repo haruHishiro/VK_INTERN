@@ -31,5 +31,4 @@ public class TestChangeDescriptionUserPhoto {
                 .build();
         assertTrue(HttpHelper.getResponseBody(getPhotoInfoRequest.createUrlWithParams()).contains("\"text\":\""+DESCRIPTION + '"'), "Описание фото не изменилось");
     }
-
 }
