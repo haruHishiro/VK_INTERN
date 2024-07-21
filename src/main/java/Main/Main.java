@@ -1,6 +1,7 @@
 package Main;
 
 import base.ConfigRequest;
+import base.GenerationData;
 import base.HttpHelper;
 import requestMethod.EditPhotoRequest;
 
@@ -8,7 +9,6 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException, InterruptedException {
-        System.out.println(ConfigRequest.createBaseURL());
         EditPhotoRequest photo = EditPhotoRequest.newBuilder()
                 .setPhotoId("958298469296")
                 .setDescription("test")
