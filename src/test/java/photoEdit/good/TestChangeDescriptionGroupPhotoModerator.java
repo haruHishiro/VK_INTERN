@@ -12,24 +12,26 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Тест проверяет изменение описания у фото
+ * Тест проверяет изменение описания у групового фото модератором группы
  */
-public class TestChangeDescription {
-    private static final String PHOTO_ID = "962884668600";
+public class TestChangeDescriptionGroupPhotoModerator {
+    private static final String PHOTO_ID = "947310589501";
+    private static final String GROUP_ID = "70000006754109";
     private static final String DESCRIPTION = GenerationData.getRandomString(5);
 
     @Test
-    void changeDescription() throws IOException, InterruptedException {
+    void changeDescriptionGroupPhoto() throws IOException, InterruptedException {
         EditPhotoRequest editPhotoRequest = EditPhotoRequest.newBuilder()
                 .setPhotoId(PHOTO_ID)
+                .setGid(GROUP_ID)
                 .setDescription(DESCRIPTION)
                 .build();
         assertEquals("true", HttpHelper.getResponseBody(editPhotoRequest.createUrlWithParams()), "Ошибка запроса изменения фото");
 
         GetPhotoInfoRequest getPhotoInfoRequest = GetPhotoInfoRequest.newBuilder()
                 .setPhotoId(PHOTO_ID)
+                .setGid(GROUP_ID)
                 .build();
         assertTrue(HttpHelper.getResponseBody(getPhotoInfoRequest.createUrlWithParams()).contains("\"text\":\""+DESCRIPTION + '"'), "Описание фото не изменилось");
     }
-
 }

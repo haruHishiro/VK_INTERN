@@ -8,6 +8,9 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * Тест проверяет изменение описания у пользовательского фото которое он не постил
+ */
 public class TestChangeDescriptionNotOwner {
     private static final String PHOTO_ID = "850649290020";
     private static final String ERROR = "REQUEST : Invalid request : error.edit.photo.notOwner";
