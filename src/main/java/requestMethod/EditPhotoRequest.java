@@ -1,5 +1,10 @@
-package base;
+package requestMethod;
 
+import base.ConfigRequest;
+
+/**
+ * Класс отвечает за создание правильного URL для запроса метода photos.editPhoto
+ */
 public class EditPhotoRequest {
     private String photo_id = "";
     private String gid = "";
@@ -24,18 +29,18 @@ public class EditPhotoRequest {
             // private constructor
         }
 
-        public  Builder setPhotoId(String userId) {
-            EditPhotoRequest.this.photo_id = userId;
+        public  Builder setPhotoId(String photo_id) {
+            EditPhotoRequest.this.photo_id = photo_id;
             return this;
         }
 
-        public Builder setGid(String userId) {
-            EditPhotoRequest.this.gid = userId;
+        public Builder setGid(String gid) {
+            EditPhotoRequest.this.gid = gid;
             return this;
         }
 
-        public Builder setDescription(String token) {
-            EditPhotoRequest.this.description = token;
+        public Builder setDescription(String description) {
+            EditPhotoRequest.this.description = description;
             return this;
         }
 

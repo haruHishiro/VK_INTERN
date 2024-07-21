@@ -2,6 +2,9 @@ package base;
 
 import java.util.Locale;
 
+/**
+ * Класс отвечающий за хранение конфирурации URL
+ */
 public enum ConfigRequest {
     API_URL("https://api.ok.ru/fb.do?"),
     APPLICATION_KEY("CIOPKKLGDIHBABABA"),

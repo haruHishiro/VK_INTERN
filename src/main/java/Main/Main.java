@@ -1,13 +1,10 @@
 package Main;
 
 import base.ConfigRequest;
-import base.EditPhotoRequest;
+import base.HttpHelper;
+import requestMethod.EditPhotoRequest;
 
 import java.io.IOException;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 
 public class Main {
     public static void main(String[] args) throws IOException, InterruptedException {
@@ -19,10 +16,6 @@ public class Main {
 
         System.out.println(photo.createUrlWithParams());
 
-        HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(photo.createUrlWithParams())).build();
-        HttpResponse response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        System.out.println(response.body().toString());
+        System.out.println(HttpHelper.getResponseBody(photo.createUrlWithParams()));
     }
 }
